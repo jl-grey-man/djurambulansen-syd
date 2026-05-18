@@ -4,13 +4,16 @@
 .AppleDouble
 .LSOverride
 
-# Duplicate/unused images (originals in uploads/)
+# Original PNG source files (replaced by WebP)
+uploads/*.png
 /axel.png
 /bil3.png
 /bil4.png
 /uggla.png
 /karta.png
 /hundaxel1.png
+/bil5.png
+/ugg1.png
 
 # Archive
 image/

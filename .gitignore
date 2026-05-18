@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Duplicate/unused images (originals in uploads/)
+/axel.png
+/bil3.png
+/bil4.png
+/uggla.png
+/karta.png
+/hundaxel1.png
+
+# Archive
+image/
+"Djurambulansen Syd.zip"
+design_handoff_djurambulansen_syd/
+
+# Lock files
+.claudebot.lock

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Djurambulansen Syd – Vi är här när ditt djur behöver oss</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --crimson:      #721825;
+      --crimson-deep: #511018;
+      --crimson-soft: #8B2535;
+      --gold:         #C4982A;
+      --gold-warm:    #D4A83A;
+      --cream:        #FAF8F5;
+      --cream-warm:   #F3EDE3;
+      --dark:         #2A1E1C;
+      --mid:          #6B5F5A;
+      --border:       rgba(114,24,37,0.09);
+      --radius:       12px;
+      --radius-sm:    8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      color: var(--dark); background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Lora', Georgia, serif; }
+
+    /* ━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    #main-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    #main-nav.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      padding: 0 52px; height: 66px;
+      display: flex; align-items: center;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 11px;
+      text-decoration: none; flex-shrink: 0; margin-right: auto;
+    }
+    .logo-icon { width: 36px; height: 36px; color: var(--crimson); }
+    .logo-wordmark { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-wordmark strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15.5px; font-weight: 600; color: var(--crimson);
+    }
+    .logo-wordmark span {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 30px; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; font-size: 14px; font-weight: 500;
+      color: var(--mid); transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-cta {
+      margin-left: 18px;
+      background: var(--crimson) !important; color: #fff !important;
+      padding: 9px 20px; border-radius: var(--radius-sm);
+      font-weight: 700 !important; font-size: 13.5px !important;
+      transition: background .15s !important;
+    }
+    .nav-cta:hover { background: var(--crimson-soft) !important; }
+
+    /* ━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .hero {
+      position: relative; height: calc(58vh + 100px); min-height: 620px; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('uploads/axel.png') right center / cover no-repeat;
+    }
+    /* Much lighter overlay — left side only, image breathes on right */
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        106deg,
+        rgba(22, 10, 8, 0.60) 0%,
+        rgba(22, 10, 8, 0.44) 28%,
+        rgba(22, 10, 8, 0.14) 52%,
+        transparent 68%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2; height: 100%;
+      display: flex; align-items: center;
+      padding: 80px 52px 56px;
+    }
+    .hero-text { max-width: 500px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-warm); margin-bottom: 20px;
+    }
+    .hero-badge::before {
+      content: ''; display: block; width: 26px; height: 2px;
+      background: var(--gold-warm); border-radius: 2px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 3.2vw, 48px);
+      font-weight: 600; color: #fff;
+      line-height: 1.18; letter-spacing: -0.025em;
+      text-wrap: pretty; margin-bottom: 18px;
+    }
+    .hero-sub {
+      font-size: 16px; line-height: 1.70; color: rgba(255,255,255,0.82);
+      margin-bottom: 32px; max-width: 400px;
+    }
+    .hero-sub strong {
+      display: block; margin-top: 14px;
+      font-size: 22px; font-weight: 700; color: var(--gold-warm);
+      letter-spacing: 0.01em;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: var(--crimson); color: #fff;
+      padding: 13px 28px; border-radius: var(--radius-sm);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 14.5px; font-weight: 700; text-decoration: none;
+      transition: background .15s, transform .12s;
+    }
+    .btn-primary:hover { background: var(--crimson-soft); transform: translateY(-1px); }
+    .btn-ghost-light {
+      display: inline-block; color: rgba(255,255,255,0.90);
+      padding: 12px 22px; border-radius: var(--radius-sm);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 14.5px; font-weight: 600; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.42);
+      transition: border-color .15s, color .15s;
+    }
+    .btn-ghost-light:hover { border-color: rgba(255,255,255,0.85); color: #fff; }
+
+    /* ━━ SECTION UTILITIES ━━━━━━━━━━━━━━━━ */
+    .section-label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .section-h2 {
+      font-size: clamp(25px, 2.6vw, 38px); font-weight: 600;
+      letter-spacing: -0.022em; line-height: 1.22; color: var(--dark);
+    }
+
+    /* ━━ OM OSS (centered) ━━━━━━━━━━━━━━━━ */
+    .about { background: var(--cream); padding: 80px 52px; }
+    .about-text {
+      max-width: 760px; margin: 0 auto; text-align: center;
+    }
+    .about-text p {
+      font-size: 18px; line-height: 1.76; color: var(--mid); margin-top: 16px;
+    }
+    .about-text p strong { color: var(--dark); font-weight: 600; }
+
+    /* ━━ PILLARS ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .pillars { background: #fff; padding: 0 0 96px; }
+    .pillars-inner { max-width: 1320px; margin: 0 auto; padding: 96px 52px 0; }
+    .pillars-header-img { width: 100%; height: 340px; overflow: hidden; }
+    .pillars-header-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 66.67%; display: block;
+    }
+    .pillars-header { margin-bottom: 52px; }
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .pillar-card {
+      background: var(--cream); border-radius: var(--radius);
+      padding: 36px 34px 34px; position: relative; overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(114,24,37,0.08);
+    }
+    .pillar-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--crimson);
+    }
+    /* Icon circle */
+    .pillar-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(114,24,37,0.08);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; color: var(--crimson);
+    }
+    .pillar-icon svg { width: 22px; height: 22px; }
+    .pillar-card h3 {
+      font-size: 20px; font-weight: 600; color: var(--dark);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .pillar-card p {
+      font-size: 14.5px; line-height: 1.74; color: var(--mid); margin-bottom: 12px;
+    }
+    .funding-list { list-style: none; margin: 0 0 20px; }
+    .funding-list li {
+      font-size: 13.5px; color: var(--mid);
+      padding: 3px 0 3px 16px; position: relative;
+    }
+    .funding-list li::before {
+      content: '–'; position: absolute; left: 0; color: var(--gold); font-weight: 700;
+    }
+    .pillar-link {
+      font-size: 13.5px; font-weight: 700; color: var(--crimson);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 5px;
+      transition: gap .15s, color .15s;
+    }
+    .pillar-link::after { content: '→'; font-size: 13px; }
+    .pillar-link:hover { color: var(--crimson-soft); gap: 8px; }
+
+    /* ━━ SERVICES (dark bg, light cards) ━━ */
+    .services { background: var(--crimson-deep); padding: 0 0 96px; }
+    .services-header-img {
+      width: 100%; height: 340px; overflow: hidden;
+    }
+    .services-header-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 66.67%; display: block;
+    }
+    .services-inner { max-width: 1320px; margin: 0 auto; padding: 64px 52px 0; }
+    .services .section-label { color: rgba(196,168,58,0.70); }
+    .services .section-h2 { color: #fff; margin-bottom: 52px; }
+    .services-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; align-items: stretch;
+    }
+    .services-col { display: flex; flex-direction: column; gap: 16px; }
+    .services-image { border-radius: var(--radius); overflow: hidden; position: relative; }
+    .services-image img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .service-item {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 36px 36px 32px;
+      display: flex; gap: 22px; align-items: flex-start;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .service-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(114,24,37,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--crimson);
+    }
+    .service-icon svg { width: 22px; height: 22px; }
+    .service-body {}
+    .service-n {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 8px; display: block; opacity: 0.8;
+    }
+    .service-item h3 {
+      font-size: 19px; font-weight: 600; color: var(--dark);
+      margin-bottom: 8px; line-height: 1.3;
+    }
+    .service-item p {
+      font-size: 14.5px; line-height: 1.68; color: var(--mid);
+    }
+
+    /* ━━ WILDLIFE SECTION (split + uggla) ━ */
+    .wildlife {
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .wildlife-image {
+      overflow: hidden; min-height: 460px;
+    }
+    .wildlife-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 25%; display: block;
+    }
+    .wildlife-text {
+      background: var(--cream-warm);
+      padding: 88px 64px 88px 60px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .wildlife-text .section-h2 { margin-bottom: 18px; }
+    .wildlife-text p {
+      font-size: 16px; line-height: 1.76; color: var(--mid); margin-bottom: 14px;
+    }
+
+    /* ━━ PHOTO BREAK ━━━━━━━━━━━━━━━━━━━━━━ */
+    .photo-break { height: 400px; overflow: hidden; position: relative; }
+    .photo-break img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center 42%; display: block;
+    }
+    .photo-caption {
+      position: absolute; bottom: 24px; right: 40px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.62);
+      background: rgba(0,0,0,0.28); backdrop-filter: blur(4px);
+      padding: 5px 14px; border-radius: 40px;
+    }
+
+    /* ━━ COVERAGE (map as full-width bg) ━ */
+    .coverage {
+      position: relative; overflow: hidden;
+      height: 420px;
+    }
+    #leaflet-map {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+    }
+    .coverage-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(247,243,238,0.92) 0%,
+        rgba(247,243,238,0.88) 30%,
+        rgba(247,243,238,0.40) 58%,
+        transparent 75%
+      );
+      pointer-events: none;
+    }
+    .coverage-inner {
+      position: relative; z-index: 10;
+      max-width: 1320px; margin: 0 auto;
+      padding: 0 52px;
+      height: 100%;
+      display: flex; align-items: center;
+    }
+    .coverage-text { max-width: 480px; }
+    .coverage-text .section-h2 { margin-bottom: 14px; }
+    .coverage-text p { font-size: 16px; line-height: 1.74; color: var(--mid); }
+
+    /* ━━ STATS (on image bg) ━━━━━━━━━━━━━━ */
+    .stats {
+      position: relative; padding: 80px 52px; overflow: hidden;
+    }
+    .stats-bg {
+      position: absolute; inset: 0;
+      background: url('uploads/bil4.png') center 40% / cover no-repeat;
+    }
+    .stats-overlay {
+      position: absolute; inset: 0;
+      background: rgba(81,16,24,0.82);
+    }
+    .stats-inner { max-width: 1320px; margin: 0 auto; position: relative; z-index: 2; }
+    .stats-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: rgba(255,255,255,0.42);
+      text-align: center; margin-bottom: 48px;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      text-align: center; padding: 0 28px;
+      border-right: 1px solid rgba(255,255,255,0.14);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 50px; font-weight: 700; color: #fff;
+      line-height: 1; margin-bottom: 10px; letter-spacing: -0.03em;
+    }
+    .stat-label {
+      font-size: 13.5px; font-weight: 500;
+      color: rgba(255,255,255,0.55); line-height: 1.45;
+    }
+
+    /* ━━ CTA SECTION ━━━━━━━━━━━━━━━━━━━━━━ */
+    .cta-section { background: var(--cream); padding: 96px 52px; }
+    .cta-inner { max-width: 1320px; margin: 0 auto; }
+    .cta-inner > h2 {
+      font-size: clamp(25px, 2.6vw, 38px); font-weight: 600;
+      letter-spacing: -0.022em; text-align: center;
+      margin-bottom: 48px; color: var(--dark);
+    }
+    .cta-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .cta-card {
+      border-radius: var(--radius); padding: 38px 34px;
+      display: flex; flex-direction: column;
+    }
+    .cta-card.c-ring {
+      background: #fff; border: 1px solid var(--border);
+    }
+    .cta-card.c-give { background: var(--crimson); }
+    .cta-card.c-more { background: var(--cream-warm); }
+    .cta-eyebrow {
+      display: block; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .cta-card.c-give .cta-eyebrow { color: rgba(255,255,255,0.48); }
+    .cta-card h3 {
+      font-size: 21px; font-weight: 600; line-height: 1.28;
+      margin-bottom: 10px; color: var(--dark);
+    }
+    .cta-card.c-give h3 { color: #fff; }
+    .cta-card p {
+      font-size: 14.5px; line-height: 1.70; color: var(--mid);
+      flex: 1; margin-bottom: 26px;
+    }
+    .cta-card.c-give p { color: rgba(255,255,255,0.68); }
+    .cta-phone {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 23px; font-weight: 600;
+      color: var(--crimson); text-decoration: none; display: block;
+      transition: color .15s;
+    }
+    .cta-phone:hover { color: var(--crimson-soft); }
+    .btn-gold {
+      display: inline-block; background: var(--gold); color: var(--dark);
+      padding: 12px 24px; border-radius: var(--radius-sm);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13.5px; font-weight: 700; text-decoration: none;
+      align-self: flex-start; transition: background .15s, transform .12s;
+    }
+    .btn-gold:hover { background: var(--gold-warm); transform: translateY(-1px); }
+    .btn-ghost-dark {
+      display: inline-block; background: transparent; color: var(--crimson);
+      padding: 11px 22px; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--crimson);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 13.5px; font-weight: 700; text-decoration: none;
+      align-self: flex-start; transition: background .15s, color .15s;
+    }
+    .btn-ghost-dark:hover { background: var(--crimson); color: #fff; }
+
+    /* ━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    footer { background: var(--dark); padding: 68px 52px 36px; }
+    .footer-inner { max-width: 1320px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      margin-bottom: 28px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    }
+    .footer-logo svg { color: var(--gold); }
+    .footer-logo-text strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15px; font-weight: 600; color: #fff; display: block;
+    }
+    .footer-logo-text span {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--gold); display: block;
+    }
+    .footer-desc {
+      font-size: 13.5px; line-height: 1.74;
+      color: rgba(255,255,255,0.40); max-width: 280px; margin-bottom: 14px;
+    }
+    .footer-org { font-size: 11.5px; color: rgba(255,255,255,0.20); }
+    .footer-col-title {
+      font-family: 'Nunito Sans', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.26); margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none; display: flex; flex-direction: column; gap: 8px;
+    }
+    .footer-links a {
+      text-decoration: none; font-size: 13.5px;
+      color: rgba(255,255,255,0.52); transition: color .15s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-row {
+      display: flex; gap: 10px; margin-bottom: 8px; font-size: 13.5px;
+    }
+    .footer-contact-row dt {
+      color: rgba(255,255,255,0.26); font-weight: 600; min-width: 44px; flex-shrink: 0;
+    }
+    .footer-contact-row dd { color: rgba(255,255,255,0.52); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: rgba(255,255,255,0.26);
+    }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a {
+      font-size: 12.5px; color: rgba(255,255,255,0.36);
+      text-decoration: none; transition: color .15s;
+    }
+    .footer-social a:hover { color: rgba(255,255,255,0.75); }
+
+    /* ━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media (max-width: 1060px) {
+      .pillars-grid, .services-grid, .cta-grid { grid-template-columns: 1fr; }
+      .about, .wildlife { grid-template-columns: 1fr; }
+      .wildlife-image { min-height: 340px; }
+      .coverage-inner { grid-template-columns: 1fr; gap: 40px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 28px; }
+      .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-top > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .nav-inner, .hero-content,
+      .about-text, .wildlife-text,
+      .pillars, .services, .coverage,
+      .stats, .cta-section, footer { padding-left: 22px; padding-right: 22px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .hero h1 { font-size: 26px; }
+    }
+
+    /* ━━ TWEAKS PANEL ━━━━━━━━━━━━━━━━━━━━━ */
+    #tweaks-panel {
+      position: fixed; bottom: 22px; right: 22px; z-index: 500;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,0,0,0.09); border-radius: 14px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15); width: 272px;
+      overflow: hidden; display: none;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    #tweaks-panel.open { display: block; }
+    .tp-head {
+      padding: 15px 18px 13px;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .tp-title { font-size: 13.5px; font-weight: 700; color: #1a1a1a; }
+    .tp-close {
+      background: none; border: none; cursor: pointer;
+      font-size: 17px; color: #aaa; line-height: 1; padding: 2px 4px;
+    }
+    .tp-close:hover { color: #333; }
+    .tp-body { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 16px; }
+    .tp-group label {
+      display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: #999; margin-bottom: 7px;
+    }
+    .tp-radios { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tp-radio {
+      padding: 5px 11px; border-radius: 6px; cursor: pointer;
+      font-size: 12.5px; font-weight: 600;
+      border: 1.5px solid rgba(0,0,0,0.11); background: #f4f4f4; color: #555;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .tp-radio.active { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- ━━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Djurambulansen Syd">
+      <svg class="logo-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M9 32 C5 26,4 18,8 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M7 25 C3 21,2.5 15,5.5 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.35"/>
+        <path d="M35 32 C39 26,40 18,36 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M37 25 C41 21,41.5 15,38.5 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.35"/>
+        <ellipse cx="22" cy="29.5" rx="6.5" ry="5.5" fill="currentColor"/>
+        <ellipse cx="13" cy="20" rx="3.3" ry="3.9" fill="currentColor" transform="rotate(-14 13 20)"/>
+        <ellipse cx="19" cy="16.5" rx="3" ry="3.6" fill="currentColor" transform="rotate(-5 19 16.5)"/>
+        <ellipse cx="25" cy="16.5" rx="3" ry="3.6" fill="currentColor" transform="rotate(5 25 16.5)"/>
+        <ellipse cx="31" cy="20" rx="3.3" ry="3.9" fill="currentColor" transform="rotate(14 31 20)"/>
+      </svg>
+      <div class="logo-wordmark">
+        <strong>Djurambulansen</strong>
+        <span>Syd</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#tackningsomrade">Täckningsområde</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#manadgivare" class="nav-cta">Bli månadsgivare</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ━━━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-badge">Ideell organisation &middot; Blekinge &amp; Skåne</p>
+      <h1>Vi är här när ditt djur behöver oss</h1>
+      <p class="hero-sub">En ideell organisation som transporterar både husdjur och viltskadade djur till veterinär och rehabilitator. <strong>Gratis och dygnet runt.</strong></p>
+      <div class="hero-actions">
+        <a href="tel:0XXXXXXXXX" class="btn-primary">Ring oss nu</a>
+        <a href="#manadgivare" class="btn-ghost-light">Bli månadsgivare</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ OM OSS (centered) ━━━━━━━━━━━━━ -->
+<section class="about" id="om">
+  <div class="about-text">
+    <span class="section-label">Om oss</span>
+    <p>Djurambulansen Syd är en <strong>ideell organisation</strong> som hjälper husdjur, djurägare och skadade vilda djur. Vi samarbetar med veterinärer, rehabilitatorcentrum och myndigheter för att rädda liv.</p>
+    <p>Vi finns för både <strong>ditt husdjur</strong> och för <strong>skogens varelser</strong>.</p>
+  </div>
+</section>
+
+<!-- ━━━━ TJÄNSTER ━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="services" id="tjanster">
+  <div class="services-header-img">
+    <img src="uploads/bil3.png" alt="Djurambulansen Syd på uppdrag" />
+  </div>
+  <div class="services-inner">
+    <span class="section-label">Tjänster</span>
+    <h2 class="section-h2">Hur hjälper vi?</h2>
+    <div class="services-grid">
+
+      <div class="services-col">
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2"/>
+              <path d="M16 8h4l3 4v4h-7V8z"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <span class="service-n">01</span>
+            <h3>Husdjur till veterinär</h3>
+            <p>Vi hämtar dig och ditt sjuka husdjur och kör er till veterinären. Du behöver inte oroa dig &ndash; vi tar hand om transporten.</p>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8 2 5 6 5 10c0 2.5 1.5 4.5 4 5.5l3-5.5 3 5.5c2.5-1 4-3 4-5.5 0-4-3-8-7-8z"/>
+              <path d="M12 15.5V22"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <span class="service-n">02</span>
+            <h3>Vilt till rehabilitator</h3>
+            <p>Hittat en skadad fågel? En igelkott? En hare? Vi transporterar den till en rehabilitator som kan hjälpa den att bli frisk igen.</p>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <span class="service-n">03</span>
+            <h3>Stöd för myndigheter</h3>
+            <p>Vi arbetar tillsammans med Polisen och Länsstyrelsen för att ta hand om och transportera djur när det behövs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-image">
+        <img src="bil5.png" alt="Djurambulansen Syd" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ TÄCKNINGSOMRÅDE ━━━━━━━━━━━━━━━━ -->
+<section class="coverage" id="tackningsomrade">
+  <img id="leaflet-map" src="uploads/karta.png" alt="Karta över Blekinge och Skåne" />
+  <div class="coverage-overlay"></div>
+  <div class="coverage-inner">
+    <div class="coverage-text">
+      <span class="section-label">Täckningsområde</span>
+      <h2 class="section-h2">Vi kör i Blekinge och Skåne</h2>
+      <p>Vi är här för djuren i Blekinge och Skåne. Ring oss &ndash; oavsett var du befinner dig i regionen. Vi hämtar husdjur och transporterar vilt direkt från er plats.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ TRE PELARE ━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="pillars" id="pelare">
+  <div class="pillars-inner">
+    <div class="pillars-header">
+      <h2 class="section-h2">Vad vi tror på</h2>
+    </div>
+    <div class="pillars-grid">
+
+      <!-- Gratis -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a5 5 0 0 1 5 5v1H7V7a5 5 0 0 1 5-5z"/>
+            <rect x="3" y="8" width="18" height="13" rx="2"/>
+            <line x1="12" y1="12" x2="12" y2="17"/>
+            <line x1="9" y1="14.5" x2="15" y2="14.5"/>
+          </svg>
+        </div>
+        <h3>Gratis för alla</h3>
+        <p>Alla kostnader täcks av människor som ger bidrag, varje månad eller engångsvis. Du kan också bli Månadsgivare och stödja vår verksamhet.</p>
+        <ul class="funding-list">
+          <li>Privata gåvor från människor som bryr sig</li>
+          <li>Månadsgivare (från 50 kr/månad)</li>
+          <li>Företag och organisationer som stödjer vår vision</li>
+        </ul>
+        <a href="#manadgivare" class="pillar-link">Bli månadsgivare</a>
+      </div>
+
+      <!-- Transparens -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Fullständig transparens</h3>
+        <p>Alla gåvor, alla inköp, alla utgifter &ndash; allt finns dokumenterat och tillgängligt för att se när som helst för medlemmar och månadsgivare. Alla andra kan begära insyn &ndash; vi tror på att pengar ska användas rätt.</p>
+        <a href="#" class="pillar-link">Läs om vår ekonomi</a>
+      </div>
+
+      <!-- Demokrati -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Medlemsdemokrati</h3>
+        <p>Alla större beslut &ndash; från löner till vilken ambulans vi köper &ndash; tas tillsammans med medlemmarna och månadsgivarna. Varje fråga presenteras på vår platform med fullständig information långt innan röstningen.</p>
+        <p>Innan du röstar måste du besvara frågor om valet. Det är så vi säkerställer att alla förstår konsekvenserna och de olika valmöjligheternas för och nackdelar.</p>
+        <a href="#" class="pillar-link">Senaste omröstningar</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ WILDLIFE (uggla) ━━━━━━━━━━━━━━━━ -->
+<section class="wildlife">
+  <div class="wildlife-image">
+    <img src="ugg1.png" alt="Djurambulansen Syd räddar en uggla" loading="lazy" />
+  </div>
+  <div class="wildlife-text">
+    <span class="section-label">Skadade vilda djur</span>
+    <h2 class="section-h2">Skadade vilda djur</h2>
+    <p>Hittar du en skadad uggla, räv eller igelkott? Ring oss. Vi kommer, hämtar och kör till rätt rehabilitatorcentrum &ndash; utan kostnad för dig.</p>
+    <p>Varje år räddar vi hundratals vilda djur i Blekinge och Skåne tack vare engagerade månadsgivare och frivilliga.</p>
+  </div>
+</section>
+
+<!-- ━━━━ STATISTIK (på bil4-bakgrund) ━━━━━ -->
+<section class="stats" id="statistik">
+  <div class="stats-bg"></div>
+  <div class="stats-overlay"></div>
+  <div class="stats-inner">
+    <p class="stats-eyebrow">Vad vi har gjort tillsammans</p>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">XX+</div>
+        <div class="stat-label">djur räddade<br>detta år</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">XX+</div>
+        <div class="stat-label">timmars arbete av<br>dedikerade medlemmar</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">XX+</div>
+        <div class="stat-label">km kört för<br>att rädda liv</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">XX</div>
+        <div class="stat-label">aktiva<br>månadsgivare</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ CTA ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="cta-section" id="manadgivare">
+  <div class="cta-inner">
+    <h2>Du kan hjälpa redan idag</h2>
+    <div class="cta-grid">
+      <div class="cta-card c-ring">
+        <span class="cta-eyebrow">Ring oss</span>
+        <h3>Vi är här när du behöver oss</h3>
+        <p>Oavsett om det gäller ditt husdjur eller ett skadat vilt djur du hittat &ndash; ring oss. Även i nödsituationer, dygnet runt.</p>
+        <a href="tel:0XXXXXXXXX" class="cta-phone">0-XXX-XXX</a>
+      </div>
+      <div class="cta-card c-give">
+        <span class="cta-eyebrow">Bli månadsgivare</span>
+        <h3>Från 50 kr/månad kan du göra en stor skillnad</h3>
+        <p>Månadsgivare finansierar vår verksamhet och får full insyn i ekonomin &ndash; och rösträtt i alla större beslut.</p>
+        <a href="#" class="btn-gold">Bli månadsgivare</a>
+      </div>
+      <div class="cta-card c-more">
+        <span class="cta-eyebrow">Läs mer</span>
+        <h3>Om vår vision och hur vi arbetar</h3>
+        <p>Läs om de tre principerna som styr oss: fullständig transparens, demokrati och hjälp som alltid är gratis.</p>
+        <a href="#pelare" class="btn-ghost-dark">Om oss</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<footer id="kontakt">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <ellipse cx="22" cy="29.5" rx="6.5" ry="5.5" fill="currentColor"/>
+            <ellipse cx="13" cy="20" rx="3.3" ry="3.9" fill="currentColor" transform="rotate(-14 13 20)"/>
+            <ellipse cx="19" cy="16.5" rx="3" ry="3.6" fill="currentColor" transform="rotate(-5 19 16.5)"/>
+            <ellipse cx="25" cy="16.5" rx="3" ry="3.6" fill="currentColor" transform="rotate(5 25 16.5)"/>
+            <ellipse cx="31" cy="20" rx="3.3" ry="3.9" fill="currentColor" transform="rotate(14 31 20)"/>
+          </svg>
+          <div class="footer-logo-text">
+            <strong>Djurambulansen</strong>
+            <span>Syd</span>
+          </div>
+        </div>
+        <p class="footer-desc">En ideell organisation som transporterar husdjur och viltskadade djur till veterinär och rehabilitator. Helt gratis, alltid.</p>
+        <p class="footer-org">Org.nr: XXXXXX &middot; Registrerad ideell förening</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Snabblänkar</p>
+        <ul class="footer-links">
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#tjanster">Tjänster</a></li>
+          <li><a href="#">Transparens &amp; Ekonomi</a></li>
+          <li><a href="#">Omröstningar</a></li>
+          <li><a href="#manadgivare">Bli månadsgivare</a></li>
+          <li><a href="#">Samarbetspartners</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Kontakt</p>
+        <dl>
+          <div class="footer-contact-row"><dt>Tel</dt><dd>0-XXX-XXX</dd></div>
+          <div class="footer-contact-row"><dt>Mail</dt><dd>info@djurambulansensyd.se</dd></div>
+          <div class="footer-contact-row"><dt>Nöd</dt><dd>0-XXX-XXX (24/7)</dd></div>
+          <div class="footer-contact-row"><dt>Adress</dt><dd>[Adress], Sverige</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Djurambulansen Syd. Alla rättigheter förbehållna.</span>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<div id="tweaks-panel" role="dialog" aria-label="Tweaks">
+  <div class="tp-head">
+    <span class="tp-title">Tweaks</span>
+    <button class="tp-close" id="tp-close" aria-label="Stäng">&times;</button>
+  </div>
+  <div class="tp-body">
+    <div class="tp-group">
+      <label>Hero-höjd</label>
+      <div class="tp-radios" id="tp-hero">
+        <button class="tp-radio active" data-val="58vh">Slim banner</button>
+        <button class="tp-radio" data-val="78vh">Mellanhög</button>
+        <button class="tp-radio" data-val="100vh">Fullskärm</button>
+      </div>
+    </div>
+    <div class="tp-group">
+      <label>Rubrikstil</label>
+      <div class="tp-radios" id="tp-font">
+        <button class="tp-radio active" data-val="'Lora', Georgia, serif">Lora</button>
+        <button class="tp-radio" data-val="'Nunito Sans', sans-serif">Sans</button>
+      </div>
+    </div>
+    <div class="tp-group">
+      <label>Sektionston</label>
+      <div class="tp-radios" id="tp-tone">
+        <button class="tp-radio active" data-val="warm">Varm</button>
+        <button class="tp-radio" data-val="neutral">Neutral</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Tweaks defaults
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "heroHeight": "58vh",
+    "headingFont": "'Lora', Georgia, serif",
+    "tone": "warm"
+  }/*EDITMODE-END*/;
+
+  let state = Object.assign({}, TWEAK_DEFAULTS);
+
+  function apply(s) {
+    document.querySelector('.hero').style.height = s.heroHeight;
+    document.documentElement.style.setProperty('--heading-font', s.headingFont);
+    document.querySelectorAll('h1,h2,h3,h4').forEach(el => {
+      el.style.fontFamily = s.headingFont;
+    });
+    const warm = s.tone === 'warm';
+    document.documentElement.style.setProperty('--cream', warm ? '#FAF8F5' : '#F5F5F5');
+    document.documentElement.style.setProperty('--cream-warm', warm ? '#F3EDE3' : '#ECECEC');
+  }
+
+  apply(state);
+
+  // Tweaks panel protocol
+  const panel = document.getElementById('tweaks-panel');
+  window.addEventListener('message', e => {
+    if (e.data?.type === '__activate_edit_mode') panel.classList.add('open');
+    else if (e.data?.type === '__deactivate_edit_mode') panel.classList.remove('open');
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+  document.getElementById('tp-close').addEventListener('click', () => {
+    panel.classList.remove('open');
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  });
+
+  function makeRadioGroup(id, key) {
+    document.getElementById(id).addEventListener('click', e => {
+      const btn = e.target.closest('.tp-radio');
+      if (!btn) return;
+      document.querySelectorAll('#' + id + ' .tp-radio').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state[key] = btn.dataset.val;
+      apply(state);
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: state[key] } }, '*');
+    });
+  }
+  makeRadioGroup('tp-hero', 'heroHeight');
+  makeRadioGroup('tp-font', 'headingFont');
+  makeRadioGroup('tp-tone', 'tone');
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Djurambulansen Syd — Finansieringsplan och Startplan
 
-**Uppdaterad:** 2026-05-21 (verifierad av agenter — se verifieringsrapport)
+**Uppdaterad:** 2026-05-21 (verifierad + utökad av agenter — runda 2)
 **Mål:** Operativ inom 12 månader (maj 2027)
 **Projektledare:** Jens Lennartsson
 
@@ -14,8 +14,10 @@
 | **Budget fas 2** | ~1 500 000 kr (2 bilar, optimal) |
 | **Omedelbart behov** | Mindre belopp för arbetstid + uniformer → ambassadörsrunda |
 | **Snabbaste pengakällan** | DOSO (email, ingen deadline, funkar oregistrerad) |
+| **Starkaste nya match** | Svenska Djurfonden (finansierat Djurambulansen Sthlm, deadline 30 sep) |
 | **Bästa strategiska match** | Strangells Stiftelse (31 aug 2026, "i frihet levande vilda djur") |
 | **Långsiktig stor källa** | SydostLeader (upp till 100%, 500k–1M, 9–12 mån process) |
+| **Betalande myndighetspartner** | Länsstyrelsen Skåne + Blekinge (upphandling djurtransporter) |
 
 ---
 
@@ -51,24 +53,29 @@ Jens bygger alla system och webbplatser själv. Dessa poster *behöver inte köp
 ## Strategi — Tre Faser
 
 ### Fas 0: Nu — Oregistrerad förening (maj 2026)
-**Mål:** Få in pengar ASAP för arbetstid + uniformer. Ambassadörsrunda.
+**Mål:** Få in pengar ASAP för arbetstid + uniformer. Etablera operativa partners.
 
 **Åtgärder:**
 1. Maila DOSO — fråga om krav/belopp, skicka sedan ansökan → 5–50k
 2. Kontakta Agria — referera Djurambulansen Stockholm (direkt prejudikat)
-3. Registrera föreningen hos Bolagsverket (tar 1–4 veckor)
-4. Påbörja Länsstyrelse-tillstånd process (lång ledtid)
-5. Köp uniformer (1–2 uppsättningar) när första pengar kommer in
+3. Kontakta KFV-Riks + Bengt-Arne Nilsson (Blekinges enda fågelrehabilitör, Sölvesborg)
+4. Kontakta Kattkommando Syd (Karlskrona) — lokal partner
+5. Registrera föreningen hos Bolagsverket (tar 1–4 veckor)
+6. Påbörja Länsstyrelse-tillstånd process + dialog om djurtransportupphandling
+7. Köp uniformer (1–2 uppsättningar) när första pengar kommer in
 
 ---
 
 ### Fas 1: Registrerad förening (jun–sep 2026)
-**Mål:** 100–200k från stiftelser för utrustning. Inled ambassadörsrunda.
+**Mål:** 100–300k från stiftelser för utrustning. Inled ambassadörsrunda.
 
 **Åtgärder:**
-1. **Strangells** — Ansök senast 25 aug, 20–50k, utrustningsprojekt (BÄST MATCHNING — notera Norrlandsrisk)
-2. **SydostLeader** — Ring Susanna Bondesson, inled idédialog (lång process men stor potential)
-3. **CSR/sponsorer** — Agria (hög prio), Arken Zoo (insamlingsmodell), Sparbanken Skåne + Karlshamn
+1. **Svenska Djurfonden** — Ansök senast 30 sep, 10–50k, direkt prejudikat (finansierat Djurambulansen Sthlm)
+2. **Strangells** — Ansök senast 25 aug, 20–50k, utrustningsprojekt (notera Norrlandsrisk)
+3. **Sparbanken Eken** — Ansök vecka 36 (sep), 4,5M delat ut 2024, passar utrustningsinköp
+4. **SydostLeader** — Ring Susanna Bondesson, inled idédialog (stor potential, lång process)
+5. **CSR/sponsorer** — Agria (hög prio), Dogman (aktiv kanal), Arken Zoo, Sparbanken Skåne + Karlshamn
+6. **Länsstyrelsen** — Kontakta djurskyddsenheten angående kommande upphandling för djurtransporter
 
 ---
 
@@ -192,17 +199,107 @@ Jens bygger alla system och webbplatser själv. Dessa poster *behöver inte köp
 
 ---
 
-### 7. CSR / Sponsorer / Näringsliv
+### 7. Svenska Djurfonden
+| | |
+|---|---|
+| **Belopp** | 10 000–50 000 kr (tidigare gett 50 000 kr till Djurambulansen Stockholm) |
+| **Deadline** | **30 september 2026** (beslut 2 ggr/år: 31 mars + 30 sep) |
+| **Krav** | Registrerad ideell förening, djurskydds-/djurhälsofokus |
+| **Process** | Webbformulär på svenskadjurfonden.se/ansok |
+| **Status** | ⚡ Väntar på org.nr. |
+| **Prioritet** | 🔴 Hög — bevisad track record med djurambulanser |
+
+> ✅ **Verifierat:** Stiftelsen grundades 2023 av Therése Lindgren. Bekräftade beviljade bidrag: 50 000 kr till Svenska Djurambulansen (fordonsköp), 50 000 kr till Stockholms Vildfågel Rehab, 10 000 kr till Viltrehab Säffle. Exakt rätt profil för oss.
+
+**Mapp:** `ansokningar/Svenska_Djurfonden/README.md`
+
+---
+
+### 8. Sparbanken Eken (Karlshamn + Ronneby)
+| | |
+|---|---|
+| **Belopp** | Ej publicerat per ansökan — delade ut 4,5M kr 2024 (400 000 kr till 70 föreningar i dec) |
+| **Deadline** | 4 gånger per år: vecka 9, 21, **36** (sep 2026), 48 |
+| **Krav** | Verksamhet i Karlshamn, Ronneby, Tingsryd, Älmhult, Emmaboda eller Alvesta |
+| **Krav projekt** | Nytt projekt (ej påbörjat), ej normalt skattefinansierat, ej löpande drift |
+| **Process** | Webbformulär på sparbankeneken.se |
+| **Status** | ⚡ Väntar på org.nr. |
+| **Prioritet** | 🟡 Medium-hög — passar utrustningsinköp |
+
+**Nästa steg:** Ansök vecka 36 (september 2026) om utrustning/bil
+**Mapp:** `ansokningar/Sparbanken_Eken/README.md`
+
+---
+
+### 9. CSR / Sponsorer / Näringsliv
 
 | Organisation | Typ | Status | Kontaktstrategi |
 |---|---|---|---|
-| **Agria Djurförsäkring** | Sponsorskap | 🔴 Hög prio | Referera Djurambulansen Stockholm — de har bekräftat samarbete med identisk verksamhet |
-| **Arken Zoo** | Insamlingsplattform | 🟡 Medium | Kunder lägger till 25 kr — ej direktbidrag. Fråga om produktdonationer. Risk: exklusivitet med Svenska Djurambulansen |
-| **Sparbanken Skåne** (Ägarstiftelse 1826) | Lokalt bidrag | 🟡 Skåne only | Gäller Kristianstad-området. Ansökan mars + september. Kräver Skåne-adress |
-| **Sparbanken Karlshamn** | Lokalt bidrag | 🟡 Blekinge | Alternativet för Blekingedelen — ej verifierad ännu |
+| **Agria Djurförsäkring** | Sponsorskap | 🔴 Hög prio | Referera Djurambulansen Stockholm — bekräftat samarbete med identisk verksamhet |
+| **Dogman** | Sponsorskap/utrustning | 🔴 Hög prio | Aktiv sponsringskanal på dogman.com/se/sponsring — skicka förfrågan |
+| **Sveland Djurförsäkringar** | Sponsorskap | 🟡 Medium | Samarbetsformulär på sveland.se/om-oss/samarbeten — sponsrat VOOV (jourhemsdj.) |
+| **Arken Zoo** | Insamlingsplattform | 🟡 Medium | Kunder lägger till 25 kr — ej direktbidrag. Fråga om produktdonationer |
+| **Sparbanken Skåne** (Ägarstiftelse 1826) | Lokalt bidrag | 🟡 Skåne | Kristianstad-området. Ansökan mars + september. Kräver Skåne-adress |
+| **Sparbanken Karlshamn** | Lokalt sponsorskap | 🟡 Blekinge | Ansökan okt–nov. Karlshamn/Olofström-området |
+| **Zooplus** | Produktrabatter | 🟢 Låg | Djurskyddsrabatt för ideella org — ej kontanter. Ansök via zooplus.se |
 | Lokala veterinärkliniker | Partnerskap | 🟡 | Direkt kontakt, ömsesidigt intresse |
 | Lokala bilhandlare/mekaniker | Fordonssponsor | 🟢 | Synlighet på ambulansen i utbyte |
 | Stiftelsen Svensk Djursjukvård (Skåne) | Partnerskap | 🟢 | Specialistdjursjukhusen Helsingborg/Malmö |
+
+---
+
+## Länsstyrelsen — Betalande Uppdragsgivare (Upphandling)
+
+> Länsstyrelsen (inte Region Skåne/Blekinge) ansvarar sedan 2018 för transport och förvaring av omhändertagna djur. De upphandlar dessa tjänster externt.
+
+| | |
+|---|---|
+| **Relevans** | Länsstyrelsen Västra Götaland upphandlade djurtransporter + djurhem höst 2025. Skåne + Blekinge gör sannolikt liknande. |
+| **Krav** | Godkänd djurtransportör (Jordbruksverket), organiserad verksamhet |
+| **Potential** | Stabil, återkommande intäkt för transport av omhändertagna hundar, katter, smådjur |
+| **Kontakt Blekinge** | Länsstyrelsen Blekinge, djurskyddsenheten, 010-224 00 00 |
+| **Kontakt Skåne** | Länsstyrelsen Skåne, djurskyddsenheten, Malmö |
+| **Prioritet** | 🔴 Hög — den enda betalande offentliga partnern med lagstöd |
+
+**Nästa steg:** Kontakta djurskyddsenheten vid båda länsstyrelserna — fråga om kommande upphandling och krav för att delta.
+
+---
+
+## Operativa Samarbetspartners
+
+> Dessa ger inte pengar men de är det operativa flödet — utan dem finns inga ärenden.
+
+### Kritiska dag 1-partners (Blekinge)
+
+| Partner | Roll | Kontakt |
+|---|---|---|
+| **Bengt-Arne Nilsson, KFV Sölvesborg** | Blekinges enda fågelrehabilitör — KAN INTE hämta djur | 073-043 34 50, bengt-arne.nilsson@lyckeby.com |
+| **Kottebyns Viltrehabilitering (Cecilia Ockedal)** | Igelkottar Blekinge, Kronoberg, del av Skåne | 073-756 42 95, ceciliaockedal80@gmail.com, kottebynsviltrehabilitering.se |
+| **Kattkommando Syd (KKS), Karlskrona** | 8000+ katter sedan 2000, Blekinge/Skåne/Småland | styrelsen@kks.nu, Intagsvägen 3A, Karlskrona |
+
+### Kritiska dag 1-partners (Skåne)
+
+| Partner | Roll | Kontakt |
+|---|---|---|
+| **KFV Skåne Sydväst** | 350 djur/år, 6 rehabilitatörer, södra Skåne | 0763-13 81 28, info@kfv-sydvast.se |
+| **KFV Kristianstad/Bromölla** | Fåglar och vilt, norra Skåne | Hans Brunemark 070-206 39 58, brunemark@hotmail.se |
+| **KFV Skåne Sydost** (Bo Olsson) | Sydöstra Skåne, Simrishamn | 070-296 09 30, bo.k.olsson@hotmail.com |
+
+### Rikstäckande samarbetspartners
+
+| Partner | Roll | Kontakt |
+|---|---|---|
+| **KFV-Riks** | Paraplyorganisation för viltrehabilitering, samarbetar med polis/länsstyrelse/kustbevakning | kfv-riks.se, bankgiro 5277-0989 |
+| **Svenska Blå Stjärnan** | Oljeolyckor + oljeskadade fåglar längs kustlinjen Blekinge/Skåne | svenskablastjarnan.se/lokala-forbund/ |
+| **Djurens Vänner (lokalt)** | Katthem i Skåne + Karlshamn, remitterar ärenden | djurensvanner.se/skane/ + djurensvanner.se/karlshamn/ |
+
+### Myndighetskontakter
+
+| Aktör | Roll | Finansiering? |
+|---|---|---|
+| **Polisregion Syd** | Remissflöde + legitimitet | Nej — informellt samarbete |
+| **Räddningstjänsten Syd** | Remissflöde vid olyckor | Nej — MOU/samarbetsavtal |
+| **NVR (Nationella Viltolycksrådet)** | Jägarsystemet för trafikskadade stora djur | Nej — deras system täcker redan eftersök |
 
 ---
 

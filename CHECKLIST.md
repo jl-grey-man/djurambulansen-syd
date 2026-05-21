@@ -23,6 +23,13 @@ Se `PLAN.md` för strategi och detaljer per finansieringskälla.
 - [ ] Referera explicit till deras samarbete med Djurambulansen Stockholm
 - [ ] Be om inledande samtal — presentera Djurambulansen Syd
 
+### Operativa partners — kontakta dag 1 (INGEN org.nr. krävs)
+- [ ] **Bengt-Arne Nilsson, KFV Sölvesborg** — 073-043 34 50. Blekinges enda fågelrehabilitör, kan inte hämta djur. Presentera Djurambulansen Syd som hans transportlösning
+- [ ] **Kattkommando Syd (KKS)** — styrelsen@kks.nu. Karlskrona-baserade, 8000+ katter sedan 2000. Fråga om samarbetsavtal för transporter
+- [ ] **KFV-Riks** — kfv-riks.se. Riksförbund för viltrehabilitering. Informera om uppstart och be om att listas som transportpartner i Blekinge/Skåne
+- [ ] **KFV Skåne Sydväst** — 0763-13 81 28, info@kfv-sydvast.se. 350 djur/år, 6 rehabilitatörer — de saknar transportkapacitet
+- [ ] **Kottebyns Viltrehabilitering** (Cecilia Ockedal) — 073-756 42 95. Igelkottar i Blekinge/Kronoberg/Skåne
+
 ### SydostLeader — inled dialog
 - [ ] Ring Susanna Bondesson: 070-231 23 17 (eller Sofia Ohlsson: 073-727 54 84)
 - [ ] Presentera idén muntligt, fråga om den matchar "smartare landsbygd för ökad service"
@@ -36,6 +43,13 @@ Se `PLAN.md` för strategi och detaljer per finansieringskälla.
 ---
 
 ## 🟡 Gör inom 1–2 månader (jun–jul 2026)
+
+### Svenska Djurfonden (deadline 30 sep 2026)
+- [ ] Registrering klar (org.nr. finns)
+- [ ] Skriv ansökan via webbformulär på svenskadjurfonden.se/ansok
+- [ ] Referera att de tidigare gett 50 000 kr till Djurambulansen Stockholm
+- [ ] Definiera vad pengarna ska till (utrustning/fordon-del)
+- [ ] Skicka **senast 20 sep** (ge marginal)
 
 ### Strangells Stiftelse (deadline 31 aug)
 - [ ] Registrering klar (org.nr. finns)
@@ -59,12 +73,20 @@ Se `PLAN.md` för strategi och detaljer per finansieringskälla.
 - [ ] Kontakta lokala jägarklubbar
 - [ ] Kontakta djurskyddskretsar i Blekinge och Skåne
 
-### CSR-kontakter
-- [ ] Arken Zoo — fråga om produktdonationer (burar, utrustning) som alternativ till insamlingsplattform. OBS: de har redan avtal med Svenska Djurambulansen — förvänta inte exklusivt samarbete
-- [ ] Sparbanken Skåne (Ägarstiftelse 1826) — relevant om föreningen har Skåne-adress. Ansökan öppen 1–30 september
-- [ ] Sparbanken Karlshamn — kontakta för Blekingedelen (ej verifierad ännu)
+### CSR-kontakter och nya finansieringskällor
+- [ ] **Dogman** — Skicka sponsringsförfrågan via dogman.com/se/sponsring. Aktiv kanal, välkomnar djurrelaterade organisationer
+- [ ] **Sveland Djurförsäkringar** — Fyll i samarbetsformulär på sveland.se/om-oss/samarbeten. Har sponsrat jourhems-djurorganisationer
+- [ ] **Sparbanken Eken** — Ansök vecka 36 (sep) om utrustningsinköp via sparbankeneken.se. Delade ut 4,5M kr 2024
+- [ ] **Sparbanken Skåne** (Ägarstiftelse 1826) — relevant om föreningen registreras i Kristianstad. Ansökan 1–30 sep
+- [ ] **Sparbanken Karlshamn** — sponsringsansökan okt–nov för Blekingedelen
+- [ ] Arken Zoo — fråga om produktdonationer (burar, utrustning). OBS: de har redan avtal med Svenska Djurambulansen
 - [ ] Kontakta lokala veterinärkliniker (Karlskrona, Ronneby, Kristianstad)
 - [ ] Kontakta Stiftelsen Svensk Djursjukvård (Helsingborg/Malmö)
+
+### Länsstyrelsen — upphandling djurtransporter
+- [ ] Ring Länsstyrelsen Blekinge djurskyddsenheten (010-224 00 00) — fråga om kommande upphandling av djurtransporttjänster och vilka krav som ställs
+- [ ] Ring Länsstyrelsen Skåne djurskyddsenheten — samma fråga
+- [ ] Ansök om att bli godkänd djurtransportör hos Jordbruksverket (krav för att delta i upphandling)
 
 ---
 
@@ -74,6 +96,13 @@ Se `PLAN.md` för strategi och detaljer per finansieringskälla.
 - [ ] Besked förväntat ~30 september
 - [ ] Om beviljat: påbörja inköp enligt projektplanen
 - [ ] Om nekat: utvärdera och planera för novemberfönstret (deadline 30 nov)
+
+### KFV Skåne + Blå Stjärnan — fördjupa samarbetet
+- [ ] **KFV Kristianstad/Bromölla** — Kontakta Hans Brunemark (070-206 39 58) och Gunwer Vinberg (070-938 43 90)
+- [ ] **KFV Skåne Sydost** — Kontakta Bo Olsson (070-296 09 30) i Simrishamn
+- [ ] **Svenska Blå Stjärnan** — Kontakta lokalt förbund (svenskablastjarnan.se/lokala-forbund/). Partner för oljeolyckor längs kustlinjen
+- [ ] **BOF** (Blekinges ornitologiska förening) — Kontakta blekinge.birdlife.se för nätverksspridning och fågelkunskap
+- [ ] **SkOF** (Skånska ornitologiska föreningen) — Kontakta skof.se — ambassadörer bland fågelintresserade i Skåne
 
 ### Alvins Fond (deadline ca 30 nov 2026)
 - [ ] Kontrollera utlysning på **birdlife.se** i september (ny förvaltare sedan höst 2025)
@@ -91,6 +120,12 @@ Se `PLAN.md` för strategi och detaljer per finansieringskälla.
 ---
 
 ## ⏳ Planera för 2027
+
+### Länsstyrelsernas stiftelsedatabas — manuell sökning
+- [ ] Gå in på stiftelser.lansstyrelsen.se
+- [ ] Filtrera på Blekinge — sök ändamål "djur" och "natur"
+- [ ] Filtrera på Skåne — samma sökning
+- [ ] Identifiera 5–10 matchande lokala stiftelser och notera krav + deadlines
 
 ### Postkodsstiftelsen (kräver 1 år + bokslut)
 - [ ] Bokslut för 2026 klart (normalt jan–mars 2027)
